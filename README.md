@@ -1,4 +1,4 @@
-# ☕ Java Journey — Learning Java from Zero
+#  Java Journey — Learning Java from Zero
 
 Welcome to my Java learning repository!
 
