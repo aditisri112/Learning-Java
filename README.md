@@ -2,7 +2,7 @@
 
 Welcome to my Java learning repository!
 
-This repository documents my journey of learning Java from scratch by following the **Apna College Java Playlist**. The goal is not only to learn Java but also to maintain a public record of my progress, notes, code implementations, practice problems, and projects.
+This repository documents my journey of learning Java from scratch. The goal is not only to learn Java but also to maintain a public record of my progress, notes, code implementations, practice problems, and projects.
 
 ---
 
