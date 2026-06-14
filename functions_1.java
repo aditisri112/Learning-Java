@@ -69,8 +69,8 @@ import java.util.*;
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        calculateFactorial(n);5
-        
+        calculateFactorial(n);
+
     }
    
 }
