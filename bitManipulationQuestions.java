@@ -44,11 +44,8 @@ class bitManipulationQuestions {
 
         //toggle function can also be easily performed using XOR but doing bitMask ^ m
 
-        //q3]Write a program to count the number of 1’s in a binary representation of the number.
-        System.out.println("Q3] Write a program to count the number of 1s in a binary representation of the number.");
-        
-    
-
+        //Q]Write 2 functions => decimalToBinary() & binaryToDecimal() to convert a number from one number system to another.
+        System.out.println("q]Write 2 functions => decimalToBinary() & binaryToDecimal() to convert a number from one number system to another.");
 
 
     }
