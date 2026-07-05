@@ -27,6 +27,16 @@ class recursionBasic {
         sum = sum + i;
         getSum(x, i+1, sum);   
     }
+
+    //4.
+    public static void getFactorial(int z, int prod){
+        if(z<=0){
+            System.out.println(prod);
+            return;
+        }
+        prod = prod*z;
+        getFactorial(z-1, prod);
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //1.print numbers from 5 to 1
@@ -50,7 +60,16 @@ class recursionBasic {
 
         System.out.println("\n");
 
-        //4.
+        //4.print facorial of number z
+        System.out.println("enter number z whose factorial you want");
+        int z = sc.nextInt();
+        int prod =1;
+        getFactorial(z, prod);
+
+        System.out.println("\n");
+
+        //5.Print the fibonacci sequence till nth term.
+        
         
 
     } 
