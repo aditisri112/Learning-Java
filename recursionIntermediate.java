@@ -43,6 +43,20 @@ class recursionIntermediate {
         findOccurance(str, idx +1, element);
 
     }
+
+    //4.
+    public static void checkArray(int arr[], int index){
+        if(index == arr.length -1){
+            System.out.println("in ascending");
+            return;
+        }
+        if(arr[index]>arr[index+1]){
+            System.out.println("not in ascending");
+        }
+        else{
+            checkArray(arr, index+1);
+        }
+    }
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -65,6 +79,17 @@ class recursionIntermediate {
         int idx = 0;
         char element = 'a';
         findOccurance(str, idx, element);
+
+        System.out.println("\n");
+
+        //4.Check if the array is sorted (strictly increasing)
+        System.out.println("enetr 4 elements of an array");
+        int arr[] = new int[4];
+        for(int j = 0; j<4; j++){
+            arr[j] = sc.nextInt();
+        }
+        int index = 0;
+        checkArray(arr, index);
 
 
         
