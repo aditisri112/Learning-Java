@@ -47,16 +47,58 @@ class recursionIntermediate {
     //4.
     public static void checkArray(int arr[], int index){
         if(index == arr.length -1){
-            System.out.println("in ascending");
+            System.out.println("is strictly increasing");
             return;
         }
-        if(arr[index]>arr[index+1]){
-            System.out.println("not in ascending");
+        if(arr[index]>=arr[index+1]){
+            System.out.println("not strictly increasing");
         }
         else{
             checkArray(arr, index+1);
         }
     }
+
+    //5.
+    public static void moveAllX(String strOriginal, int id, int count_x, String newString){
+        if(id == strOriginal.length()){
+            for(int f = 0; f<count_x; f++){
+                newString += 'x';
+            }
+            System.out.println(newString);
+            return;
+        }
+        char current = strOriginal.charAt(id);
+        if(current == 'x'){
+            count_x++;
+            moveAllX(strOriginal, id +1, count_x, newString);
+        }
+        else{
+            newString = newString + current;
+            moveAllX(strOriginal, id +1, count_x, newString);
+        }
+    }
+
+    //6.
+    public static boolean map[] = new boolean[26];
+    public static void removeDuplicate(String originalString, int indexMoving, String newString){
+        if(indexMoving==originalString.length()){
+            System.out.println(newString);
+            return;
+        }
+        char currentCharacter = originalString.charAt(indexMoving);
+        if(map[currentCharacter-'a']==true){
+            removeDuplicate(originalString, indexMoving+1, newString);
+        }
+        else{
+            newString+=currentCharacter;
+            map[currentCharacter-'a']=true;
+            removeDuplicate(originalString, indexMoving+1, newString);
+        }
+    }
+
+    //7.
+    
+    
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -91,8 +133,20 @@ class recursionIntermediate {
         int index = 0;
         checkArray(arr, index);
 
+        //5.Move all 'x' to the end -> time coplexity is O(n+count)=O(n+n)=O(2n) but constant is ignored hence it is O(n)        
+        String strOriginal = "axbcxxd";
+        moveAllX(strOriginal, 0, 0, "");
 
+        //6.Remove all duplicates in String
+        String originalString = "abbcddeffgg";
+        removeDuplicate(originalString, 0, "");
+
+        //7.Print all subsequences
         
+
+
+
+          
          
     }
     
