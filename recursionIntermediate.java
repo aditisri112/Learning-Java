@@ -97,7 +97,53 @@ class recursionIntermediate {
     }
 
     //7.
+    public static void printAllSequences(String sequence, int traverse, String newStringWithSubsequences){
+        if(traverse == sequence.length()){
+            System.out.println(newStringWithSubsequences);
+            return;
+        }
+        char curren = sequence.charAt(traverse);
+
+        //to include
+        printAllSequences(sequence, traverse+1, newStringWithSubsequences+curren);
+
+        //not included
+        printAllSequences(sequence, traverse+1, newStringWithSubsequences);
+    }
     
+    //8.
+    public static void uniqueSubsequences(String unique, int move, String newUnique, HashSet<String> set ){
+        if(move == unique.length()){
+            if(set.contains(newUnique)){
+                return;
+            }
+            else{
+                System.out.println(newUnique);
+                set.add(newUnique);
+                return;
+            }
+        }
+        char newChar = unique.charAt(move);
+        //to include
+        uniqueSubsequences(unique, move+1, newUnique+newChar , set);
+
+        //to not include
+        uniqueSubsequences(unique, move+1, newUnique, set);
+    }
+
+    //9.
+    public static String keypad[] = {".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    public static void comb(String keypadInput, int pointout, String combination){
+        if(pointout==keypadInput.length()){
+            System.out.println(combination);
+            return;
+        }
+        char currentt = keypadInput.charAt(pointout);
+        String mapping = keypad[currentt-'0'];
+        for(int g=0; g < mapping.length(); g++){
+            comb(keypadInput, pointout+1, combination+mapping.charAt(g));
+        }
+    }   
     
     
     public static void main(String[] args) {
@@ -142,11 +188,17 @@ class recursionIntermediate {
         removeDuplicate(originalString, 0, "");
 
         //7.Print all subsequences
-        
+        String sequemce = "abc";
+        printAllSequences(sequemce, 0, "");
 
+        //8. Print all unique subsequences -> use hashset data structure -> hashset is a set which stores only unique values of elements 
+        String unique = "aaa";
+        HashSet<String> set = new HashSet<>();
+        uniqueSubsequences(unique, 0, "", set);
 
-
-          
+        //9.Print Keypad Combinations
+        String keypadInput = "23";
+        comb(keypadInput, 0, "");
          
     }
     
